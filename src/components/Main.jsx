@@ -1,11 +1,12 @@
 import React from "react";
-import {Navbar} from "./"
+import { Navbar, SinglePost } from "./";
 
 const Main = () => {
   return (
     <div id="main">
       <Navbar />
-  </div>
+      <SinglePost />
+    </div>
   );
 };
 
