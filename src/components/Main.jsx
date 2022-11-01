@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { fetchingPosts } from "../api";
-import { Navbar, SinglePost } from "./";
+import { Navbar, SinglePost, Posts } from "./";
 
 const Main = () => {
   const [userPosts, setUserPosts] = useState([]);
 
-  useEffect(()=>{
-    const fetchPosts = async()=>{
+  useEffect(() => {
+    const fetchPosts = async () => {
       const returnedPosts = await fetchingPosts();
-      setUserPosts(returnedPosts)
+      setUserPosts(returnedPosts);
     };
-    fetchPosts()
-  },[])
-
+    fetchPosts();
+  }, []);
 
   return (
     <div id="main">
       <Navbar />
-      <SinglePost />
+      <SinglePost userPosts={userPosts} />
     </div>
   );
 };
