@@ -1,13 +1,12 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import { SinglePost, CreatePosts } from "./";
+import { SinglePost } from "./";
 
 const Posts = (props) => {
   const userPosts = props.userPosts;
-  const setUserPosts = props.setUserPosts;
 
   return (
     <>
+      <h3>Hello World</h3>
       <div className="postsColumn">
         {userPosts.length ? (
           userPosts.map((post) => {
