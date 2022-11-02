@@ -9,7 +9,7 @@ const SinglePost = (props) => {
       <h3 className="postTitle">{post.title}</h3>
       <p>{post.content}</p>
       <p>{post.active}</p>
-      <p>{post.tags[1].name}</p>
+      <p>{post.tags[0].name}</p>
       {/* ^^come back to get all hashtags to display!! */}
     </div>
   );

@@ -23,7 +23,7 @@ const Main = () => {
     createRoutesFromElements(
       <Route path="/" element={<Navbar />}>
         <Route path="/" element={<Posts userPosts={userPosts} />} />
-        <Route path="addPost" element={<CreatePost />} />
+        <Route path="addPost" element={<CreatePost userPosts={userPosts}/>} />
         <Route path="login" element={<LogInOut />} />
       </Route>
     )
