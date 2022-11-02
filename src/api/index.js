@@ -5,9 +5,25 @@ export async function fetchingPosts() {
     const fetchingPostUrl = await fetch(`${BASE_URL}/api/posts`);
     const fetchedPostUrl = await fetchingPostUrl.json();
     // console.log(fetchedPostUrl.posts[0]);
-    console.log(fetchedPostUrl);
+    console.log(fetchedPostUrl.posts);
     return fetchedPostUrl.posts;
   } catch (error) {
     console.error(err);
   }
+}
+
+export async function createPost (post, token){
+const options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+  body: JSON.stringify({
+    post
+  })
+};
+const response = await fetch(`${BASE_URL}/api/posts`, options)
+const result = await response.json()
+return result
 }
