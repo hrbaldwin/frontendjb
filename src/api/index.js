@@ -27,3 +27,38 @@ export async function createPost(token, post) {
   const result = await response.json();
   return result;
 }
+
+export async function logInUser(username, password){
+  console.log(username, password)
+  let options = {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body : JSON.stringify({
+        username,
+        password
+    })
+  }
+  let response = await fetch(`${BASE_URL}/api/users/login`, options)
+  let result = await response.json()
+  console.log(result) 
+  return result
+}
+
+export async function RegisterUser(username, password){
+  console.log(username, password)
+  let options = {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body : JSON.stringify({
+      user: {
+        username: username,
+        password: password
+      }
+    })
+  }
+  let response = await fetch(`${BASE_URL}/`)
+}

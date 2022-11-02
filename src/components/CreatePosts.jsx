@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { createPost } from "../api";
 
 const CreatePosts = (props) => {
@@ -17,6 +18,13 @@ const CreatePosts = (props) => {
         <form onSubmit={handleSubmit}>
           <label>Title:</label>
           <input type="text" required />
+          <label>Content:</label>
+          <input type='text' required />
+          <label>Hashtags:</label>
+          <input type='text' required />
+          <button>Submit</button>
+          <Link to='/'>  <button>Go back</button></Link>
+        
         </form>
       </div>
     </>

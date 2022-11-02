@@ -6,7 +6,6 @@ const Posts = (props) => {
 
   return (
     <>
-      <h3>Hello World</h3>
       <div className="postsColumn">
         {userPosts.length ? (
           userPosts.map((post) => {
