@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { createRoutesFromElements, RouterProvider, createBrowserRouter, Route} from "react-router-dom";
+import {
+  createRoutesFromElements,
+  RouterProvider,
+  createBrowserRouter,
+  Route,
+} from "react-router-dom";
 import { fetchingPosts } from "../api";
 import { Navbar, SinglePost, Posts } from "./";
 
@@ -16,21 +21,16 @@ const Main = () => {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-          <Route path="/" element={<Navbar />}>
-            <Route 
-            path="posts"
-            element={<Posts userPosts={userPosts} setUserPosts={setUserPosts}/>}
-            />
-          </Route>
-           
+      <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Posts userPosts={userPosts} />} />
+      </Route>
     )
-    // continue here :)
   );
 
   return (
-  <div id='main'>
-      <RouterProvider router={router} ></RouterProvider>
-</div>
+    <div id="main">
+      <RouterProvider router={router}></RouterProvider>
+    </div>
   );
 };
 
