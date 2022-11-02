@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createRoutesFromElements } from "react-router-dom";
+import { createRoutesFromElements, RouterProvider, createBrowserRouter, Route} from "react-router-dom";
 import { fetchingPosts } from "../api";
 import { Navbar, SinglePost, Posts } from "./";
 
@@ -15,15 +15,22 @@ const Main = () => {
   }, []);
 
   const router = createBrowserRouter(
-    createRoutesFromElements()
+    createRoutesFromElements(
+          <Route path="/" element={<Navbar />}>
+            <Route 
+            path="posts"
+            element={<Posts userPosts={userPosts} setUserPosts={setUserPosts}/>}
+            />
+          </Route>
+           
+    )
     // continue here :)
   );
 
   return (
-    <div id="main">
-      <Navbar />
-      <Posts userPosts={userPosts} />
-    </div>
+  <div id='main'>
+      <RouterProvider router={router} ></RouterProvider>
+</div>
   );
 };
 
