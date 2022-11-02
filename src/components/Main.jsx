@@ -6,7 +6,14 @@ import {
   Route,
 } from "react-router-dom";
 import { fetchingPosts } from "../api";
-import { Navbar, SinglePost, Posts, CreatePost, LogInOut } from "./";
+import {
+  Navbar,
+  SinglePost,
+  Posts,
+  CreatePost,
+  LogInOut,
+  PostDetails,
+} from "./";
 
 const Main = () => {
   const [userPosts, setUserPosts] = useState([]);
@@ -23,8 +30,12 @@ const Main = () => {
     createRoutesFromElements(
       <Route path="/" element={<Navbar />}>
         <Route path="/" element={<Posts userPosts={userPosts} />} />
-        <Route path="addPost" element={<CreatePost userPosts={userPosts}/>} />
+        <Route path="addPost" element={<CreatePost userPosts={userPosts} />} />
         <Route path="login" element={<LogInOut />} />
+        <Route
+          path="postdetails"
+          element={<PostDetails userPosts={userPosts} />}
+        />
       </Route>
     )
   );

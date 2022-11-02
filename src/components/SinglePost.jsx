@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SinglePost = (props) => {
   const post = props.post;
+  const { userPosts, setUserPosts } = props;
   console.log(post);
+  const navigate = useNavigate();
+
   return (
     <div className="singlePostBody">
       <h3 className="postTitle">{post.title}</h3>

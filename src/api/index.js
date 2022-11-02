@@ -22,7 +22,7 @@ export async function createPost(token, title, content, tags) {
     body: JSON.stringify({
       title,
       content,
-      tags
+      tags,
     }),
   };
   const response = await fetch(`${BASE_URL}/api/posts`, options);
@@ -63,21 +63,19 @@ export async function RegisterUser(username, password) {
   let response = await fetch(`${BASE_URL}/`);
 }
 
-export async function DeletePost(id, token){
+export async function DeletePost(id, token) {
   try {
-    
- 
-  const options = {
-    method: "DELETE",
-    headers: {
-      'Content-Type' : 'application/json',
-      'Authorization' : `Bearer ${token}`
-    },
-  }
-  const response = await fetch(`${BASE_URL}/api/${id}`, options)
-  const result = await response.json()
-  return result 
-} catch (error) {
-    console.error(err)
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const response = await fetch(`${BASE_URL}/api/posts/${id}`, options);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
   }
 }
