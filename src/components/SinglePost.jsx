@@ -6,15 +6,11 @@ const SinglePost = (props) => {
   console.log(post);
   return (
     <div className="singlePostBody">
-      <h3 className="postTitle">{post}</h3>
-      {/* <p>{post.description}</p>
-      <p>Listed Price: {post.price}</p> */}
-      {/* <Link to={`/newEdit/${post._id}`}>
-        <button className="postDetailsButton">Post Details</button>
-      </Link>
-      <Link to={`/message`}>
-        <button className="postDetailsButton">Message</button>
-      </Link> */}
+      <h3 className="postTitle">{post.title}</h3>
+      <p>{post.content}</p>
+      <p>{post.active}</p>
+      <p>{post.tags[1].name}</p>
+      {/* ^^come back to get all hashtags to display!! */}
     </div>
   );
 };

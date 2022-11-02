@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createRoutesFromElements } from "react-router-dom";
 import { fetchingPosts } from "../api";
 import { Navbar, SinglePost, Posts } from "./";
 
@@ -13,10 +14,15 @@ const Main = () => {
     fetchPosts();
   }, []);
 
+  const router = createBrowserRouter(
+    createRoutesFromElements()
+    // continue here :)
+  );
+
   return (
     <div id="main">
       <Navbar />
-      <SinglePost userPosts={userPosts} />
+      <Posts userPosts={userPosts} />
     </div>
   );
 };
