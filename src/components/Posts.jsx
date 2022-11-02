@@ -1,4 +1,5 @@
 import React from "react";
+import { SinglePost } from './';
 
 const Posts = (props) => {
   const userPosts = props.userPosts;
@@ -6,7 +7,9 @@ const Posts = (props) => {
 
   return (
     <>
-      <div></div>
+      <div>
+
+      </div>
     </>
   );
 };
