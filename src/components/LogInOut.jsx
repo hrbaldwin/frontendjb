@@ -32,8 +32,10 @@ const LogInOut = () => {
           <button className="submitButton" type="submit">
             submit
           </button>
-        
-          <Link to={'/Register'}className="signUpLink"><button className="signUpButton">Not a user? Sign up here</button></Link>
+
+          <Link to={"/Register"} className="signUpLink">
+            <button className="signUpButton">not a user? sign up here</button>
+          </Link>
         </form>
       </div>
     </>

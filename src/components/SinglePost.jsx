@@ -18,30 +18,34 @@ const SinglePost = (props) => {
     }
   }
 
-
   return (
     <div className="singlePostBody">
-      <h3 className="postTitle">{post.title}</h3>
+      <div className="titleAndUsername">
+        <h3 className="postTitle">{post.title}</h3>
+        <h4 className="username">👤 {post.author.username}</h4>
+      </div>
       <div className="postContentDiv">
         <p className="postContent">{post.content}</p>
         <p className="postContent">{post.active}</p>
-        {/* <p className="postContent">{post.tags[0].name}</p> */}
-        {post && post.tags.length ? 
-        post.tags.map((tag, i)=>{
-          return <p key={`tag-singlePost${i}`}>{tag.name}</p>
-        })
-        : null}
-        {/* ^^come back to get all hashtags to display!! */}
+        <div className="hashtagDisplay">
+          {post && post.tags.length
+            ? post.tags.map((tag, i) => {
+                return <p key={`tag-singlePost${i}`}>{tag.name}</p>;
+              })
+            : null}
+        </div>
       </div>
-      <button
-        className="trashBin"
-        id={post.id ? `${post.id}` : null}
-        onClick={(e) => {
-          handleDelete(e);
-        }}
-      >
-        <img id="trash" src="../trash.png"></img>
-      </button>
+      <div className="trashBinButtonDiv">
+        <button
+          className="trashBin"
+          id={post.id ? `${post.id}` : null}
+          onClick={(e) => {
+            handleDelete(e);
+          }}
+        >
+          <img id="trash" src="../trash.png"></img>
+        </button>
+      </div>
     </div>
   );
 };

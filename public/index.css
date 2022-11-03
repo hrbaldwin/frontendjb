@@ -65,7 +65,7 @@ body {
   border: 30px solid rgba(226, 231, 241,1);
   border-radius: 10px;
   background-color: rgba(226, 231, 241,1);
-  margin: 1em;
+  margin: 0 1em 1em 1em;
   color: #576271;
   font-family: 'Crimson Text', serif;
   display: flex;
@@ -147,7 +147,6 @@ body {
   display: flex;
   border-radius: 10px;
   justify-content: right;
-
 }
 
 .trashBin {
@@ -156,7 +155,10 @@ body {
   display: flex;
   justify-content: right;
   max-width: 50px;
-  margin-left: 25em;
+}
+.trashBinButtonDiv{
+  display: flex;
+  justify-content: right;
 }
 
 .postTitle{
@@ -172,4 +174,45 @@ body {
 .postContentDiv{
   display: flex;
   flex-direction: column;
+}
+
+.titleAndUsername{
+  display: flex;
+  justify-content: space-between;
+}
+
+.username{
+  color: rgba(110, 85, 127, 1);
+}
+.hashtagDisplay{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 15px;
+  color: rgb(152,171,198);
+}
+
+.searchBarInputBar{
+  padding: 6px;
+  width: 25em;
+  border-radius: 10px;
+  background-color: rgba(187,163,196, 0.6);
+  border: 2px solid rgba(187,163,196, 0.5);
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.searchBarDiv{
+  margin: 15px 10px 0 10px;
+}
+.searchBarInputBar::placeholder{
+  color: antiquewhite;
+}
+#tags::placeholder {
+  font-family: 'Crimson Text', serif;
+  color: rgba(110, 85, 127, 0.7);
+  font-size: 17px;
+  font-style: italic;
+  text-align: center;
 }

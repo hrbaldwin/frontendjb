@@ -29,7 +29,12 @@ const CreatePosts = (props) => {
           <label>Content:</label>
           <input id="content" type="text" required />
           <label>Hashtags:</label>
-          <input id="tags" type="text" placeholder="make sure to put #" required />
+          <input
+            id="tags"
+            type="text"
+            placeholder="‧₊˚✧     please make sure to include your # symbol     ✧˚₊‧"
+            required
+          />
           <button className="submitButton">submit</button>
         </form>
       </div>
