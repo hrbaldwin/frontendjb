@@ -32,6 +32,8 @@ const LogInOut = () => {
           <button className="submitButton" type="submit">
             submit
           </button>
+        
+          <Link to={'/Register'}className="signUpLink"><button className="signUpButton">Not a user? Sign up here</button></Link>
         </form>
       </div>
     </>

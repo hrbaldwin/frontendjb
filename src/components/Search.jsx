@@ -11,10 +11,11 @@ const Search = (props) => {
     if (!searchInput) {
       return userPosts;
     } else {
-      let filteredTags = userPosts.filter((found) => {
-        return found.tags.toLowerCase().includes(searchInput.toLowerCase());
+      let filteredTags = userPosts.filter((found, i) => {
+        console.log(found.tags)
+        return found.tags[i].toLowerCase().includes(searchInput.toLowerCase());
       });
-      console.log(filteredTags);
+      console.log(filteredTags, "this is filtered tags console log");
       return filteredTags;
     }
   }

@@ -5,7 +5,6 @@ import { DeletePost } from "../api";
 const SinglePost = (props) => {
   const post = props.post;
   const { userPosts, setUserPosts } = props;
-  console.log(post);
   const navigate = useNavigate();
 
   async function handleDelete(e) {
@@ -19,13 +18,19 @@ const SinglePost = (props) => {
     }
   }
 
+
   return (
     <div className="singlePostBody">
       <h3 className="postTitle">{post.title}</h3>
       <div className="postContentDiv">
         <p className="postContent">{post.content}</p>
         <p className="postContent">{post.active}</p>
-        <p className="postContent">{post.tags[0].name}</p>
+        {/* <p className="postContent">{post.tags[0].name}</p> */}
+        {post && post.tags.length ? 
+        post.tags.map((tag, i)=>{
+          return <p key={`tag-singlePost${i}`}>{tag.name}</p>
+        })
+        : null}
         {/* ^^come back to get all hashtags to display!! */}
       </div>
       <button

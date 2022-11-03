@@ -93,7 +93,7 @@ body {
 }
 
 .submitButton {
-  padding: 15px;
+  padding: 10px;
   background-color: rgba(152, 171, 198, 0.9);
   color: antiquewhite;
   border: 2px solid rgba(152, 171, 198, 0.5);
@@ -104,6 +104,23 @@ body {
   max-width: 100px;
   align-self: center;
   margin-top: 20px;
+}
+
+.signUpButton {
+  margin: 10px;
+  padding: 8px;
+  background-color: rgba(152, 171, 198, 0.9);
+  color: antiquewhite;
+  border: 2px solid rgba(152, 171, 198, 0.5);
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+  align-self: center;
+  max-width: 250px;
+  border-radius: 5px;
+}
+
+.signUpLink {
+  align-self: center;
 }
 
 .backButton {

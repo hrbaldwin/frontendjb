@@ -4,8 +4,6 @@ export async function fetchingPosts() {
   try {
     const fetchingPostUrl = await fetch(`${BASE_URL}/api/posts`);
     const fetchedPostUrl = await fetchingPostUrl.json();
-    // console.log(fetchedPostUrl.posts[0]);
-    console.log(fetchedPostUrl.posts);
     return fetchedPostUrl.posts;
   } catch (error) {
     console.error(err);
@@ -48,8 +46,8 @@ export async function logInUser(username, password) {
   return result;
 }
 
-export async function RegisterUser(username, password) {
-  console.log(username, password);
+export async function RegisterUser(username, password, name, location) {
+  console.log(username, password, name, location);
   let options = {
     method: "POST",
     headers: {
@@ -58,9 +56,14 @@ export async function RegisterUser(username, password) {
     body: JSON.stringify({
       username: username,
       password: password,
+      name: name,
+      location: location
     }),
   };
-  let response = await fetch(`${BASE_URL}/`);
+  let response = await fetch(`${BASE_URL}/api/users/register`, options);
+  let result = await response.json()
+  console.log(result)
+  return result.token
 }
 
 export async function DeletePost(id, token) {
