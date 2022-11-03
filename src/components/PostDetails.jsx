@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { DeletePost } from "../api";
 
 const PostDetails = (props) => {
   const navigate = useNavigate();
-  const post = props.post;
+  const { postId } = useParams();
   const { userPosts, setUserPosts } = props;
+  console.log(userPosts)
   const [postDetails, setPostDetails] = useState({
     title: "",
     content: "",
@@ -23,7 +24,7 @@ const PostDetails = (props) => {
   useEffect(() => {
     const post = filterPostsDetails()[0];
 
-    setPostDetails(postDetails);
+    setPostDetails(post);
   }, []);
 
   async function handleDelete(e) {
@@ -42,13 +43,12 @@ const PostDetails = (props) => {
   return (
     <>
       <div className="box">
-        <div>{post.title}</div>
-        <div>{post.description}</div>
-        <div>{post.price}</div>
-        <div>{post.location}</div>
+        <div>{userPosts[0].title}</div>
+        <div>{userPosts[0].content}</div>
+        <div>{userPosts.tags}</div>
         <button
           className="postDetailsButton"
-          id={post.id ? `${post.id}` : null}
+          id={userPosts.id ? `${post.id}` : null}
           onClick={(e) => {
             handleDelete(e);
           }}

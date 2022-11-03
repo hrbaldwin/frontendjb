@@ -13,6 +13,7 @@ const SinglePost = (props) => {
       <p>{post.content}</p>
       <p>{post.active}</p>
       <p>{post.tags[0].name}</p>
+      <Link to={`postDetails`}><button className="backButton">See Post</button></Link>
       {/* ^^come back to get all hashtags to display!! */}
     </div>
   );
