@@ -129,6 +129,8 @@ body {
   max-height: 27px;
   display: flex;
   border-radius: 10px;
+  justify-content: right;
+
 }
 
 .trashBin {
@@ -136,6 +138,8 @@ body {
   border: none;
   display: flex;
   justify-content: right;
+  max-width: 50px;
+  margin-left: 25em;
 }
 
 .postTitle{
