@@ -6,7 +6,15 @@ import {
   Route,
 } from "react-router-dom";
 import { fetchingPosts } from "../api";
-import { Navbar, SinglePost, Posts, CreatePost, LogInOut, Register, Search } from "./";
+import {
+  Navbar,
+  SinglePost,
+  Posts,
+  CreatePost,
+  LogInOut,
+  Register,
+  Search,
+} from "./";
 
 const Main = () => {
   const [userPosts, setUserPosts] = useState([]);
@@ -25,7 +33,13 @@ const Main = () => {
       <Route path="/" element={<Navbar />}>
         <Route
           path="/"
-          element={<Search userPosts={userPosts} searchInput={searchInput} setSearchInput={setSearchInput} />}
+          element={
+            <Search
+              userPosts={userPosts}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+            />
+          }
           element2={<Posts userPosts={userPosts} />}
         />
         <Route path="addPost" element={<CreatePost userPosts={userPosts} />} />
