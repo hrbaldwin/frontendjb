@@ -13,33 +13,41 @@ const Search = (props) => {
     return post;
   });
 
-  //   function filterTags() {
-  //     if (!searchInput) {
-  //       return userPosts;
-  //     } else {
-  //       let filteredTags = userPosts.filter((found, i) => {
-  //         console.log("USERPOSTS", userPosts);
-  //         return found.tags[i].toLowerCase().includes(searchInput.toLowerCase());
-  //       });
-  //       console.log(filteredTags, "this is filtered tags console log");
-  //       return filteredTags;
-  //     }
-  //   }
+    function filterTags(post) {
+      let hashtags
+      if (!searchInput) {
+        return post;
+      } else {
+        let filteredTags = post.tags.map((tag, i) => {
+          hashtags = tag.name 
+          return hashtags
+        });
+        //left off here
+        //line 71, searchedPost should be set for param value, but will not show posts if the state isn't set.
+        console.log(hashtags)
 
-  function filterTags(post) {
-    if (!searchInput) {
-      return post;
-    } else {
-      {
-        post && post.tags.length
-          ? post.tags.map((tag, i) => {
-              return <p key={`tag-singlePost${i}`}>{tag.name}</p>;
-            })
-          : null;
+        console.log(filteredTags);
+        
       }
-      return;
+      
     }
-  }
+
+
+
+  // function filterTags(post) {
+  //   if (!searchInput) {
+  //     return post;
+  //   } else {
+  //     {
+  //       post && post.tags.length
+  //         ? post.tags.filter((tag, i) => {
+  //             return <p key={`tag-singlePost${i}`}>{tag.name}</p>;
+  //           })
+  //         : null;
+  //     }
+  //     return;
+  //   }
+  // }
 
   const handleChange = (e) => {
     e.preventDefault();
