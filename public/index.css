@@ -68,6 +68,8 @@ body {
   margin: 1em;
   color: #576271;
   font-family: 'Crimson Text', serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .formBox{
@@ -121,4 +123,32 @@ body {
 
 .postsColumn {
   margin: 2em;
+}
+
+#trash{
+  max-height: 27px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.trashBin {
+  background-color: rgba(226, 231, 241,1);
+  border: none;
+  display: flex;
+  justify-content: right;
+}
+
+.postTitle{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.postContent{
+  display: flex;
+  margin: 2px;
+}
+
+.postContentDiv{
+  display: flex;
+  flex-direction: column;
 }

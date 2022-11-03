@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createPost } from "../api";
 
 const CreatePosts = (props) => {
   const { userPosts, setUserPosts } = props;
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     console.log(e);
@@ -15,6 +16,8 @@ const CreatePosts = (props) => {
     const token = localStorage.getItem("token");
     const newPost = await createPost(token, title, content, tags);
     console.log("this is newPost console log", newPost);
+    navigate("/");
+    location.reload();
   }
   return (
     <>
@@ -28,9 +31,6 @@ const CreatePosts = (props) => {
           <label>Hashtags:</label>
           <input id="tags" type="text" required />
           <button className="submitButton">submit</button>
-          <Link to="/">
-            <button className="backButton">←</button>
-          </Link>
         </form>
       </div>
     </>

@@ -32,9 +32,6 @@ const LogInOut = () => {
           <button className="submitButton" type="submit">
             submit
           </button>
-          <Link to="/">
-            <button className="backButton">←</button>
-          </Link>
         </form>
       </div>
     </>
