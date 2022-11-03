@@ -64,12 +64,59 @@ body {
 .singlePostBody {
   border: 30px solid rgba(226, 231, 241,1);
   border-radius: 10px;
-  margin: 5px;
   background-color: rgba(226, 231, 241,1);
-  margin-top: 1em;
-  /* color: rgb(152, 171, 198); */
+  margin: 1em;
   color: #576271;
   font-family: 'Crimson Text', serif;
+}
+
+.formBox{
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.formBoxDiv{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Crimson Text', serif;
+  color: #576271
+}
+
+.headerThree{
+  font-size: 2em;
+  color: rgba(152, 171, 198, 1);
+  align-self: center;
+}
+
+.submitButton {
+  padding: 15px;
+  background-color: rgba(152, 171, 198, 0.9);
+  color: antiquewhite;
+  border: 2px solid rgba(152, 171, 198, 0.5);
+  border-radius: 5px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  max-width: 100px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.backButton {
+  padding: 5px;
+  background-color: rgba(152, 171, 198, 0.9);
+  color: antiquewhite;
+  border: 2px solid rgba(152, 171, 198, 0.5);
+  border-radius: 5px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+#content{
+  padding: 30px;
 }
 
 .postsColumn {
