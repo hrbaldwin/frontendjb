@@ -2,16 +2,18 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
-
-
-
   return (
     <>
       <div id="navbar">
-        <h2>Front End</h2>
-        <Link to={'/addPost'}><button>Add Post</button></ Link>
-        <Link to={'/login'}><button>Log In</button></ Link>
-
+        <h2 id="navbarHeader">dreamscape</h2>
+        <div className="navbarButtons">
+          <Link to={"/addPost"}>
+            <button className="navbarButton">create post</button>
+          </Link>
+          <Link to={"/login"}>
+            <button className="navbarButton">log in</button>
+          </Link>
+        </div>
       </div>
       <Outlet />
     </>

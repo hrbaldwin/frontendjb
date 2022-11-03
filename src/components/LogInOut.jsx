@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logInUser } from "../api";
 
 const LogInOut = () => {
@@ -22,15 +22,19 @@ const LogInOut = () => {
 
   return (
     <>
-      <div className="logInBox">
-        <form onSubmit={handleSubmit}>
+      <div className="formBoxDiv">
+        <h3 className="headerThree">log in below</h3>
+        <form onSubmit={handleSubmit} className="formBox">
           <label htmlFor="username">Username:</label>
           <input type="text" required />
           <label htmlFor="password">Password:</label>
           <input type="text" required />
-          <button className="logInSubmit" type="submit">
-            Submit
+          <button className="submitButton" type="submit">
+            submit
           </button>
+          <Link to="/">
+            <button className="backButton">←</button>
+          </Link>
         </form>
       </div>
     </>

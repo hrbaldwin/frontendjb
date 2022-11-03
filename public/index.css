@@ -3,6 +3,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
+  background-color: rgba(251,231,222, 0.6);
 }
 
 #navbar {
@@ -10,10 +11,43 @@ body {
   flex-grow: 1;
   max-height: 10%;
   min-height: 40px;
-  background-color: #222222;
-  color: white;
+  max-height: 120px;
+  background-image: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   display: flex;
-  align-items: center;
+  padding: 1.5em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+#navbarHeader{
+  font-size: 5em;
+  font-family: 'Fasthand', cursive;
+  letter-spacing: 6px;
+  color: rgb(187,163,196);
+  display: flex;
+  align-self: center;
+  margin-left: 1.5em;
+  margin-top: 1em;
+}
+
+.navbarButton {
+  margin-left: 15px;
+  margin-top: 5em;
+  padding: 10px;
+  background-color: rgba(187,163,196, 0.6);
+  color: antiquewhite;
+  border: 2px solid rgba(187,163,196, 0.5);
+  border-radius: 5px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+.navbarButtons{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 #footer {
@@ -28,10 +62,63 @@ body {
 }
 
 .singlePostBody {
-  border: 2px solid black;
-  margin: 5px;
+  border: 30px solid rgba(226, 231, 241,1);
+  border-radius: 10px;
+  background-color: rgba(226, 231, 241,1);
+  margin: 1em;
+  color: #576271;
+  font-family: 'Crimson Text', serif;
+}
+
+.formBox{
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.formBoxDiv{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Crimson Text', serif;
+  color: #576271
+}
+
+.headerThree{
+  font-size: 2em;
+  color: rgba(152, 171, 198, 1);
+  align-self: center;
+}
+
+.submitButton {
+  padding: 15px;
+  background-color: rgba(152, 171, 198, 0.9);
+  color: antiquewhite;
+  border: 2px solid rgba(152, 171, 198, 0.5);
+  border-radius: 5px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  max-width: 100px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.backButton {
+  padding: 5px;
+  background-color: rgba(152, 171, 198, 0.9);
+  color: antiquewhite;
+  border: 2px solid rgba(152, 171, 198, 0.5);
+  border-radius: 5px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+#content{
+  padding: 30px;
 }
 
 .postsColumn {
-  margin: 2px;
+  margin: 2em;
 }
