@@ -19,7 +19,7 @@ import {
 const Main = () => {
   const [userPosts, setUserPosts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
+console.log(userPosts)
   useEffect(() => {
     const fetchPosts = async () => {
       const returnedPosts = await fetchingPosts();
@@ -40,7 +40,6 @@ const Main = () => {
               setSearchInput={setSearchInput}
             />
           }
-          element2={<Posts userPosts={userPosts} />}
         />
         <Route path="addPost" element={<CreatePost userPosts={userPosts} />} />
         <Route path="login" element={<LogInOut />} />
