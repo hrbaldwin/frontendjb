@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Profile = (props) => {
-  const post = props.post;
   const { userPosts, setUserPosts } = props;
+const [filteredUserPosts, setFilteredUserPosts] = useState([]);
+
+function filterUserPosts(author){
+if(!author){
+setFilteredUserPosts([])
+}else {
+  let postsByAuthor = userPosts.filter((post)=>{
+    console.log(post)
+    if(post.author.username.includes(author)){
+      return true
+    }else{
+      return false
+    };
+  });
+  console.log(postsByAuthor)
+  setFilteredUserPosts(postsByAuthor)
+}
+}
+
 
   return (
-    <>
-      <h2>{post.author.username}</h2>
+    <> 
+      <h2>Posts by</h2>
     </>
   );
 };
