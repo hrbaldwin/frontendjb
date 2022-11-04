@@ -46,7 +46,12 @@ const Main = () => {
         <Route path="addPost" element={<CreatePost userPosts={userPosts} />} />
         <Route path="login" element={<LogInOut />} />
         <Route path="register" element={<Register />} />
-        <Route path="profile" element={<Profile userPosts={userPosts} setUserPosts={setUserPosts}/>} />
+        <Route
+          path="profile/:id"
+          element={
+            <Profile userPosts={userPosts} setUserPosts={setUserPosts} />
+          }
+        />
       </Route>
     )
   );

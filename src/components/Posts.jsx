@@ -12,10 +12,7 @@ const Posts = (props) => {
             return <SinglePost key={`post-id-${post.id}`} post={post} />;
           })
         ) : (
-          <div className="loadingDiv">
-            {" "}
-            loading posts... (from posts component)
-          </div>
+          <div className="loadingDiv"> loading posts...</div>
         )}
       </div>
     </>

@@ -57,13 +57,13 @@ export async function RegisterUser(username, password, name, location) {
       username: username,
       password: password,
       name: name,
-      location: location
+      location: location,
     }),
   };
   let response = await fetch(`${BASE_URL}/api/users/register`, options);
-  let result = await response.json()
-  console.log(result)
-  return result.token
+  let result = await response.json();
+  console.log(result);
+  return result.token;
 }
 
 export async function DeletePost(id, token) {
@@ -80,5 +80,22 @@ export async function DeletePost(id, token) {
     return result;
   } catch (error) {
     console.error(error);
+  }
+}
+
+export async function filterUserPosts(author) {
+  if (!author) {
+    setFilteredUserPosts([]);
+  } else {
+    let postsByAuthor = userPosts.filter((post) => {
+      console.log(post);
+      if (post.author.username.includes(author)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    console.log(postsByAuthor);
+    setFilteredUserPosts(postsByAuthor);
   }
 }
