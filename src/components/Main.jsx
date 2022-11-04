@@ -29,6 +29,7 @@ const Main = () => {
     fetchPosts();
   }, []);
 
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Navbar />}>

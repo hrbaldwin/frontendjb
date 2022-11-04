@@ -4,6 +4,7 @@ import { DeletePost } from "../api";
 
 const SinglePost = (props) => {
   const post = props.post;
+  console.log(post)
   const { userPosts, setUserPosts } = props;
   const navigate = useNavigate();
   const [filteredUserPosts, setFilteredUserPosts] = useState([]);
