@@ -5,4 +5,5 @@ export { default as Posts } from "./Posts";
 export { default as CreatePost } from "./CreatePosts";
 export { default as LogInOut } from "./LogInOut";
 export { default as Search } from "./Search";
-export { default as Register } from './Register'
+export { default as Register } from "./Register";
+export { default as Profile } from "./Profile";

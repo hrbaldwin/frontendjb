@@ -14,12 +14,13 @@ import {
   LogInOut,
   Register,
   Search,
+  Profile,
 } from "./";
 
 const Main = () => {
   const [userPosts, setUserPosts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-console.log(userPosts)
+  console.log(userPosts);
   useEffect(() => {
     const fetchPosts = async () => {
       const returnedPosts = await fetchingPosts();
@@ -36,6 +37,7 @@ console.log(userPosts)
           element={
             <Search
               userPosts={userPosts}
+              setUserPosts={setUserPosts}
               searchInput={searchInput}
               setSearchInput={setSearchInput}
             />
@@ -44,6 +46,7 @@ console.log(userPosts)
         <Route path="addPost" element={<CreatePost userPosts={userPosts} />} />
         <Route path="login" element={<LogInOut />} />
         <Route path="register" element={<Register />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
     )
   );

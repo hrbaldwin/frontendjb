@@ -202,6 +202,7 @@ body {
   font-family: 'Crimson Text', serif;
   font-size: 15px;
   letter-spacing: 2px;
+  color: antiquewhite;
 }
 .searchBarDiv{
   margin: 15px 10px 0 10px;
@@ -215,4 +216,10 @@ body {
   font-size: 17px;
   font-style: italic;
   text-align: center;
+}
+.loadingDiv{
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+  font-size: 25px;
+  color: rgba(110, 85, 127, 0.8);
 }
