@@ -82,20 +82,3 @@ export async function DeletePost(id, token) {
     console.error(error);
   }
 }
-
-export async function filterUserPosts(author) {
-  if (!author) {
-    setFilteredUserPosts([]);
-  } else {
-    let postsByAuthor = userPosts.filter((post) => {
-      console.log(post);
-      if (post.author.username.includes(author)) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-    console.log(postsByAuthor);
-    setFilteredUserPosts(postsByAuthor);
-  }
-}
