@@ -20,7 +20,6 @@ import {
 const Main = () => {
   const [userPosts, setUserPosts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  console.log(userPosts);
   useEffect(() => {
     const fetchPosts = async () => {
       const returnedPosts = await fetchingPosts();
@@ -28,7 +27,6 @@ const Main = () => {
     };
     fetchPosts();
   }, []);
-
 
   const router = createBrowserRouter(
     createRoutesFromElements(

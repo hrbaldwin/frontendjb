@@ -1,45 +1,39 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Profile = (props) => {
-  const post = props.post;
-  console.log(post)
   const { userPosts, setUserPosts } = props;
-  const [filteredUserPosts, setFilteredUserPosts] = useState([]);
-
-
-    function filterUserPosts(author) {
-      if (!author) {
-        setFilteredUserPosts([]);
-      } else {
-        let postsByAuthor = userPosts.filter((post) => {
-          console.log(post);
-          if (post.author.username.includes(author)) {
-            return true;
-          } else {
-            return false;
-          }
-        });
-        console.log(postsByAuthor);
-        setFilteredUserPosts(postsByAuthor);
-      }
-    }
-
-
-userPosts.filter((post, i) => {
-  console.log(post.author.username)
-      if(post.author.username)
-        return <p>{post.author.username}</p>
-      })
-
+  const { id } = useParams();
+  const [filteredUserPosts, setFilteredUserPosts] = useState(
+    userPosts.filter((post) => {
+      return post.author.id == id;
+    })
+  );
 
   return (
-    <div>
-      <div>{userPosts[0].author.username}</div>
-      <div>{userPosts[0].title}</div>
-      <div>{userPosts[0].content}</div>
-    </div>
-  )
+    <>
+      <div className="postsColumn">
+        {filteredUserPosts.map((post, i) => {
+          return (
+            <div key={`tag-userPost${i}`} className="singlePostBody">
+              <div className="titleAndUsername">
+                <h3 className="postTitle">{post.title}</h3>
+                <h4 className="username">👤 {post.author.username}</h4>{" "}
+              </div>
+              <div>{post.content}</div>
+              <div className="hashtagDisplay">
+                {post && post.tags.length
+                  ? post.tags.map((tag, i) => {
+                      return <p key={`tag-singlePost${i}`}>{tag.name}</p>;
+                    })
+                  : null}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
 };
-
 
 export default Profile;
