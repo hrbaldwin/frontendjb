@@ -24,13 +24,20 @@ const CreatePosts = (props) => {
       <div className="formBoxDiv">
         <h3 className="headerThree">share your dream</h3>
         <form onSubmit={handleSubmit} className="formBox">
-          <label>Title:</label>
-          <input id="title" type="text" required />
-          <label>Content:</label>
-          <input id="content" type="text" required />
-          <label>Hashtags:</label>
+          <label className="labels">Title:</label>
+          <input id="title" className="inputs" type="text" required />
+          <label className="labels">Content:</label>
+          <textarea
+            id="content"
+            className="inputs"
+            name="text"
+            rows="6"
+            cols="50"
+          ></textarea>
+          <label className="labels">Hashtags:</label>
           <input
             id="tags"
+            className="inputs"
             type="text"
             placeholder="‧₊˚✧     please make sure to include your # symbol     ✧˚₊‧"
             required

@@ -14,7 +14,7 @@ const SinglePost = (props) => {
     const token = localStorage.getItem("token");
     const deleted = await DeletePost(toDelete, token);
     if (deleted) {
-      // location.reload();
+      location.reload();
     }
   }
 

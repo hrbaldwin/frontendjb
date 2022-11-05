@@ -2,9 +2,6 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
-  window.onscroll = function () {
-    myFunction();
-  };
   return (
     <>
       <div id="navbar">

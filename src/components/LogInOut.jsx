@@ -24,11 +24,15 @@ const LogInOut = () => {
     <>
       <div className="formBoxDiv">
         <h3 className="headerThree">log in below</h3>
-        <form onSubmit={handleSubmit} className="formBox">
-          <label htmlFor="username">Username:</label>
-          <input type="text" required />
-          <label htmlFor="password">Password:</label>
-          <input type="text" required />
+        <form onSubmit={handleSubmit} className="formBoxLogIn">
+          <label className="labels" htmlFor="username">
+            Username:
+          </label>
+          <input type="text" className="inputs" required />
+          <label className="labels" htmlFor="password">
+            Password:
+          </label>
+          <input type="password" className="inputs" required />
           <button className="submitButton" type="submit">
             submit
           </button>

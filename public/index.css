@@ -81,15 +81,33 @@ body {
 .formBox{
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
-  margin-right: 100px;
+  width: 70%;
+  align-self: center;
+}
+.formBoxLogIn{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-self: center;
 }
 
 .formBoxDiv{
   display: flex;
   flex-direction: column;
   font-family: 'Crimson Text', serif;
-  color: #576271
+  color: #576271;
+}
+.inputs{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.labels{
+  font-size: 18px;
+  color: rgba(110, 85, 127, 1);
 }
 
 .headerThree{
@@ -140,9 +158,6 @@ body {
   letter-spacing: 1px;
 }
 
-#content{
-  padding: 30px;
-}
 
 .postsColumn {
   margin: 2em;

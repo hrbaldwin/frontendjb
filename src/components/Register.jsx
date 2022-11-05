@@ -24,17 +24,25 @@ const Register = () => {
   return (
     <div className="formBoxDiv">
       <h3 className="headerThree">register here</h3>
-      <form onSubmit={handleSubmit} className="formBox">
-        <label htmlFor="name">Username:</label>
-        <input type="text" placeholder="" required />
-        <label htmlFor="username">Password:</label>
-        <input type="text" placeholder="" required />
-        <label htmlFor="password">Name:</label>
-        <input type="text" required />
-        <label htmlFor="password">Location:</label>
-        <input type="text" required />
+      <form onSubmit={handleSubmit} className="formBoxLogIn">
+        <label className="labels" htmlFor="name">
+          Username:
+        </label>
+        <input className="inputs" type="text" placeholder="" required />
+        <label className="labels" htmlFor="username">
+          Password:
+        </label>
+        <input className="inputs" type="password" placeholder="" required />
+        <label className="labels" htmlFor="password">
+          Name:
+        </label>
+        <input className="inputs" type="text" required />
+        <label className="labels" htmlFor="password">
+          Location:
+        </label>
+        <input className="inputs" type="text" required />
         <button className="submitButton" type="submit">
-          Register
+          register
         </button>
       </form>
     </div>
