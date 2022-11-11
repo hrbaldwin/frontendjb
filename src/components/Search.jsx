@@ -15,7 +15,7 @@ const Search = (props) => {
     } else {
       let filteredPostsArray = userPosts.filter((post) => {
         console.log(post, "AAA");
-        if (post.title.toLowerCase().includes(str)) {
+        if (post.title.toLowerCase().includes(str.toLowerCase())) {
           return true;
         } else {
           return false;
